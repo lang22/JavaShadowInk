@@ -15,11 +15,11 @@ $('#BottomBarBtn_1').bind("click",ShowMainPage1)
 $('#BottomBarBtn_2').bind("click",ShowMainPage2)
 $('#BottomBarBtn_3').bind("click",ShowMainPage3)
 function ShowMainPage1(){
-    $('#ContentPage').attr("src","./page1.html");
+    $('#ContentPage').attr("src","./pages/page1.html");
 }
 function ShowMainPage2(){
-    $('#ContentPage').attr("src","./page2.html");
+    $('#ContentPage').attr("src","./pages/page2.html");
 }
 function ShowMainPage3(){
-    $('#ContentPage').attr("src","./page3.html");
+    $('#ContentPage').attr("src","./pages/page3.html");
 }
