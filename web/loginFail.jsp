@@ -1,10 +1,11 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html style="height:100%">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>?? - ??</title>
+    <title>墨影-登录</title>
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui">
     <link rel="stylesheet" href="./login_files/login.css">	
     <script type="text/javascript" src="./login_files/patternLock.min.js" charset="utf-8"></script>
@@ -40,19 +41,19 @@
     <section class="avatar-wrapper" id="avatarWrapper">
 	<img src="./image/icon.png">
 	</section>
-    <form id="loginForm" action="/JavaShadowInk/slogin" method="POST">
+    <form id="loginForm" action="./login" method="POST">
         <div class="box">
             <div class="input-wrapper">
                 <i class="icon forName"></i>
                 <p class="input-box">
-                    <input type="text" placeholder="???/???" id="loginName" name="name">
+                    <input type="text" placeholder="用户名/手机号" id="loginName" name="name">
                     <a href="javascript:;" class="input-clear hid" id="loginnameclear"></a>
                 </p>
             </div>
             <div class="input-wrapper">
                 <i class="icon forPwd"></i>
                 <p class="input-box">
-                <input type="password" placeholder="?????" id="loginPassword" name="password">
+                <input type="password" placeholder="密码" id="loginPassword" name="password">
                 </p>
             </div>
         </div>
@@ -62,12 +63,12 @@
 				Toast( "${HelloMessage}" ,2000)
 			</script>
 		</div>
-        <a href="javascript:document.getElementById('loginForm').submit()" class="btn btnRed" id="loginAction">??</a>
+        <a href="javascript:document.getElementById('loginForm').submit()" class="btn btnRed" id="loginAction">登录</a>
         
     </form>
     <footer class="footer">
-        <a href="/JavaShadowInk/register">????</a>
-        <a href="">????</a>
+        <a href="./register">注册</a>
+        <a href="">忘记密码</a>
     </footer>
 </body>
 </html>

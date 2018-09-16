@@ -1,3 +1,5 @@
+package Servlet;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,14 +23,14 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if(request.getParameterValues("name") == null || request.getParameterValues("password") == null){
-            response.sendRedirect("/JavaShadowInk/login.html");
+            response.sendRedirect("./login.html");
             return;
         }
         String name, password;
         name = request.getParameterValues("name")[0];
         password = request.getParameterValues("password")[0];
-        getServletContext().setAttribute("hellomessage", "登陆失败！");
-        response.sendRedirect("/JavaShadowInk/loginFail.jsp");
+        getServletContext().setAttribute("HelloMessage", "登陆失败！");
+        response.sendRedirect("./loginFail.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
