@@ -31,16 +31,7 @@
             <% times=times.multiply(times);%>
             <% out.println(times);%>
         </h2>
-    <div align="center">
-    <p>${param["username"]}</p>
-    </div>
-    <%
-        out.println("Your IP address is " + NetWorkUtil.getIpAddress(request));
-    %>
-    </br>
-    <c:forEach var="user" items="${users}">
-        id: ${user.id} username: ${user.username} password:${user.password} <br>
-    </c:forEach>
+    
     <script>
             location.reload();
     </script>
