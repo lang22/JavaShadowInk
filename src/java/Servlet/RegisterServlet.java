@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlet;
 
 import java.io.IOException;
@@ -14,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author dell
+ * @author lang22
  */
-@WebServlet(urlPatterns={"/register"})
+//@WebServlet(urlPatterns={"/register"})
 public class RegisterServlet extends HttpServlet {
 
     /**
@@ -31,10 +26,25 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        if()
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        if(name==null || password == null){
+                response.sendRedirect("./register.html");
+                return;
+        }
+        else{
+            //向数据库中插入一条记录
+            boolean isInsertionSuccessful=false;
+            if (isInsertionSuccessful){
+                getServletContext().setAttribute("HelloMessage","注册成功，请登录!");
+                response.sendRedirect("./loginFail.jsp");
+            }
+            else{
+                getServletContext().setAttribute("HelloMessage","用户名非法或已存在，请重新输入!");
+                response.sendRedirect("./loginFail.jsp");
+            }
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -73,5 +83,5 @@ public class RegisterServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
+
