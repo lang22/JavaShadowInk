@@ -6,7 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import entity.*;
+import javax.ejb.EJB;
 /**
  *
  * @author lang22
@@ -14,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 //@WebServlet(urlPatterns={"/register"})
 public class RegisterServlet extends HttpServlet {
 
+    @EJB
+    private UserFacade userFacade;
+
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -26,15 +31,16 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String name = request.getParameter("name");
+        String name  = new String(request.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
         String password = request.getParameter("password");
         if(name==null || password == null){
                 response.sendRedirect("./register.html");
-                return;
         }
         else{
             //向数据库中插入一条记录
-            boolean isInsertionSuccessful=false;
+            boolean isInsertionSuccessful= true;
+            User newUser=new User(3,name,password);
+            userFacade.create(newUser);
             if (isInsertionSuccessful){
                 getServletContext().setAttribute("HelloMessage","注册成功，请登录!");
                 response.sendRedirect("./loginFail.jsp");

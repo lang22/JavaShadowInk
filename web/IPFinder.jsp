@@ -4,7 +4,7 @@
     Author     : dell
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*" %>
 <%@ page import="toolsing.NetWorkUtil" %>
 <!DOCTYPE html>

@@ -4,9 +4,9 @@
     Author     : shao
 --%>
 
-<%@page import="toolsing.NetWorkUtil"%>
+<%@ page import="toolsing.NetWorkUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.io.*,java.util.*" %>
 <%@ page import="java.math.BigInteger" %>
 <%
@@ -24,11 +24,16 @@
     <center>
     <h1><% out.print((new Date()).toLocaleString()); %></h1>
     </center>
-    
+    <div> 
+         <c:forEach var="user" items="${users}">
+            id: ${user.id} username: ${user.username} password:${user.password} <br>
+         </c:forEach>
+
+    </div>
     
         <h2 style="word-break:break-all">
             
-            <% times=times.multiply(times);%>
+            <% times=times.multiply(new BigInteger("2"));%>
             <% out.println(times);%>
         </h2>
     

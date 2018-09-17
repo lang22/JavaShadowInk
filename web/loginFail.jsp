@@ -21,7 +21,7 @@
 			var d = 0.5;
 			m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
 			m.style.opacity = '0';
-			setTimeout(function() { document.getElementById("ToastDiv").removeChild(m) }, d * 1000);
+			setTimeout(function() { document.getElementById("ToastDiv").removeChild(m); }, d * 1000);
 		}, duration);
 	}
 	</script> 
@@ -33,11 +33,11 @@
 			background-size:cover;
 		}
         center{
-            font-size: 16 px;
-            font-color: red;
+            font-size: 16px;
+            color: red;
         }
 	</style>
-<div class="login-wrapper" id="loginWrapper" style="display: block; min-height: initial;">
+<div class="login-wrapper" id="loginWrapper" style=" display: block; min-height: 100px;">
     <section class="avatar-wrapper" id="avatarWrapper">
 	<img src="./image/icon.png">
 	</section>
@@ -60,7 +60,7 @@
 		
 		<div id="ToastDiv" style=" height:30px; width:100%;">
 			<script>
-				Toast( "${HelloMessage}" ,2000)
+				Toast( "${HelloMessage}" ,2000);
 			</script>
 		</div>
         <a href="javascript:document.getElementById('loginForm').submit()" class="btn btnRed" id="loginAction">登录</a>

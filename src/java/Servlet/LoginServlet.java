@@ -16,21 +16,30 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Administrator
+ * @author lang22
  */
 @WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getParameterValues("name") == null || request.getParameterValues("password") == null){
+        String name  = new String(request.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
+        String password = request.getParameter("password");
+        boolean isConsistent=true;
+        if(name == null || password == null){
             response.sendRedirect("./login.html");
             return;
         }
-        String name, password;
-        name = request.getParameterValues("name")[0];
-        password = request.getParameterValues("password")[0];
-        getServletContext().setAttribute("HelloMessage", "登陆失败！");
-        response.sendRedirect("./loginFail.jsp");
+        response.setCharacterEncoding("utf-8");
+        if(isConsistent)
+        {
+            getServletContext().setAttribute("HelloMessage", "欢迎回来！亲爱的"+name);
+            response.sendRedirect("./LoginSuccessful.jsp");
+        }
+        else{
+            getServletContext().setAttribute("HelloMessage", "登录失败！");
+            response.sendRedirect("./loginFail.jsp");
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
