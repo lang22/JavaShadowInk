@@ -31,12 +31,13 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String name  = new String(request.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
+        String name  =request.getParameter("name") ;
         String password = request.getParameter("password");
         if(name==null || password == null){
                 response.sendRedirect("./register.html");
         }
         else{
+            name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
             //向数据库中插入一条记录
             boolean isInsertionSuccessful= true;
             User newUser=new User(3,name,password);
