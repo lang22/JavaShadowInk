@@ -15,7 +15,7 @@
 		duration=isNaN(duration)?3000:duration;
 		var m = document.createElement('div');
 		m.innerHTML = msg;
-		m.style.cssText="opacity: 0.7;width:50%;height:30px;color:#000;line-height: 30px;text-align: center;border-radius: 5px;position: relative;top: 10px ;left:25%;z-index: 99999;background:#fff;font-size: 20px;";
+		m.style.cssText="opacity: 0.7;width:100%;height:30px;color:#000;line-height: 30px;text-align: center;border-radius: 5px;position: relative;top: 10px ;left:0px;z-index: 99999;background:#fff;font-size: 20px;";
 		document.getElementById("ToastDiv").appendChild(m);
 		setTimeout(function() {
 			var d = 0.5;
