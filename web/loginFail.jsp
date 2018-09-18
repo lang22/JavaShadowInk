@@ -57,17 +57,17 @@
                 </p>
             </div>
         </div>
-		
-		<div id="ToastDiv" style=" height:30px; width:100%;">
-			<script>
-				Toast( "${HelloMessage}" ,2000);
-			</script>
-		</div>
+        
+        <div id="ToastDiv" style=" height:30px; width:100%;">
+            <script>
+                    Toast( "${HelloMessage}" ,2000);
+            </script>
+        </div>
         <a href="javascript:document.getElementById('loginForm').submit()" class="btn btnRed" id="loginAction">登录</a>
         
     </form>
     <footer class="footer">
-        <a href="./register">注册</a>
+        <a href="./register.html">注册</a>
         <a href="">忘记密码</a>
     </footer>
 </body>
