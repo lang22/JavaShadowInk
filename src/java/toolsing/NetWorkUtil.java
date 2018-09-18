@@ -1,7 +1,7 @@
 package toolsing;
 
 import java.util.logging.Logger;
-import entity.UserFacade;
+import session.UserFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
